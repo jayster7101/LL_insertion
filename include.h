@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Node.h"
-#include "List.h"
+#include "structs/Node.h"
+#include "structs/List.h"
 #include <cstdlib>
 #include <time.h>
-#include "functions.h"
+#include "functions/functions.h"
