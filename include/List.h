@@ -1,12 +1,13 @@
+#include "Node.h"
 #ifndef LIST_H
 #define LIST_H
 
-#include "Node.h"
+
 
 struct List
 {
-    Node *head;
-    Node *tail;
+    Node* head = nullptr;
+    Node* tail = nullptr;
 };
 
 // Add element to front of list.
