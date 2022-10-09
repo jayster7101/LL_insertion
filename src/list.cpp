@@ -1,10 +1,10 @@
-#include "../include/List.h"
-#include "../include/Node.h"
+#include "../include/list.h"
+#include "../include/node.h"
 #include <iostream>
 
-void add_front(List *list, int data)
+void add_front(List* list, int data)
 {
-    Node* new_node = new Node; 
+    Node* new_node = new Node;
     new_node->data = data;
     new_node->next = list->head;
     list->head = new_node;
@@ -14,7 +14,7 @@ void add_front(List *list, int data)
     }
 }
 
-void add_back(List *list, int data)
+void add_back(List* list, int data)
 {
     Node* new_node = new Node;
     new_node->data = data;
@@ -49,9 +49,10 @@ void add_in_order(List* list, int data)
 
     Node* new_node = new Node;
     new_node->data = data;
-    
+
     Node* trav = list->head;
-    while (trav->next != nullptr && trav->next->data < data) {
+    while (trav->next != nullptr && trav->next->data < data)
+    {
         trav = trav->next;
     }
 
