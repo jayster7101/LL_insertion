@@ -17,7 +17,7 @@ bool enter();
 double insertion_A(int size, int array[]); 
 
 // sorts array using insertion sort algo and returns time taken to run
-double insertion_LL(int size, List* array );
+double insertion_LL(List* list );
 
 // Explains results of run
 void show_and_explain(int size, List* list, int array, double ll_time, double arr_time);

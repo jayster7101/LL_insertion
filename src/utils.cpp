@@ -1,4 +1,5 @@
 #include "../include/utils.h"
+#include "../include/sorters.h"
 // #include <ctime>
 // #include <cstdlib>
 #include <iostream>
@@ -90,19 +91,11 @@ double insertion_A(int size, int array [])
     return time_span.count();
 }
 
-double insertion_LL(int size, List* array )
+double insertion_LL(List* list )
 {
     using namespace std::chrono;
     high_resolution_clock::time_point t1 = high_resolution_clock::now();
-
-
-    for(int i = 1; i < size; i++)
-    {   
-
-    }
-
-
-
+    insertion_sort(list);
     high_resolution_clock::time_point t2 = high_resolution_clock::now();
     duration<double> time_span = duration_cast<duration<double > >(t2 - t1);
     return time_span.count();
