@@ -1,8 +1,7 @@
-#include "Node.h"
 #ifndef LIST_H
 #define LIST_H
 
-
+#include "node.h"
 
 struct List
 {
