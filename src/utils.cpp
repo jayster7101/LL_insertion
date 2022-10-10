@@ -99,7 +99,7 @@ double insertion_A(int size, int array[])
     return time_span.count();
 }
 
-double insertion_LL(List* list)
+double insertion_LL(List*& list)
 {
     using namespace std::chrono;
     high_resolution_clock::time_point t1 = high_resolution_clock::now();
