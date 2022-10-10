@@ -6,19 +6,40 @@ void print_list(const List*);
 
 int main()
 {
-    List* list = new List;
+    bool run = greet();
+    // user interface
+    while (run)
+    {
+        // create data
+        List* list = new List;
+        int const size = 50000;
+        int arry[size];
+        random_gen(size, arry, list);
+        double lltime, atime;
+        std::cout << "\nArray and linked lists of size 50,000 created filled "
+                     "the same random data (integers)\n\n";
 
-    add_in_order(list, 1);
-    add_in_order(list, 2);
-    add_in_order(list, 3);
-    add_in_order(list, 0xA);
-    add_in_order(list, 5);
+        std::cout << "The first 50 contents in the lists and array are:\n\n";
+        print50(list);
 
-    print_list(list);
+        std::cout << "Now sorting Linked List...\n";
+        lltime = insertion_LL(list);
 
-    delete list;
+        std::cout << "Now sorting Array...\n\n";
+        atime = insertion_A(size, arry);
+
+        show_and_explain(size, list, arry, lltime, atime);
+
+        std::cout
+            << "The first 50 contents in the SORTED lists and array are:\n\n";
+        print_list(list);
+
+        std::cout << "Do you want to continue? (Yes/No)\n";
+        run = enter();
+    }
 }
 
+// prints list
 void print_list(const List* list)
 {
     Node* trav = list->head;

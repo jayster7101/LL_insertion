@@ -40,6 +40,7 @@ void insert_node_in_order(List* list, Node*& node)
     {
         list->tail->next = node;
         node->next = nullptr;
+        list->tail = node;
         return;
     }
     Node* trav = list->head;
