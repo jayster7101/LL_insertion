@@ -1,4 +1,5 @@
 #include "../include/sorters.h"
+#include <iostream>
 
 void insertion_sort(int a[], int size)
 {
@@ -23,7 +24,7 @@ void insertion_sort(int a[], int size)
  */
 void insert_node_in_order(List* list, Node*& node)
 {
-    if (list->head == nullptr)
+    if (list->head == nullptr) // guards for 0 item list
     {
         list->head = node;
         list->tail = node;
@@ -44,6 +45,7 @@ void insert_node_in_order(List* list, Node*& node)
         return;
     }
     Node* trav = list->head;
+   // Node* trav = node;
     while (trav->next != nullptr && trav->next->data < node->data)
     {
         trav = trav->next;
@@ -68,7 +70,8 @@ void insertion_sort(List*& list)
     // For each node, insert it in order into the sorted
     // list; this destroys its position in the original
     // list.
-    while (trav != nullptr)
+    
+    while (trav != nullptr) // if data is in order dont do anything 
     {
         Node* next = trav->next; // Save next node for next iteration
         insert_node_in_order(sorted, trav);
