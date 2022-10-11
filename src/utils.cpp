@@ -53,7 +53,7 @@ bool enter()
         }
         else
         {
-            std::cout << "Please enter yes or no only\n> ";
+            std::cout << "Please enter yes or no only" << std::endl << "-> ";
         }
     }
     return return_value;
@@ -64,11 +64,11 @@ bool greet()
     std::cout << "Hello, Welcome to our program" << std::endl;
     std::cout << "********************************";
     std::cout << " Rundown ";
-    std::cout << "********************************";
+    std::cout << "********************************" << std::endl;
     std::cout << "* We have created a small program that compares the run time "
-                 "efficiency of insertion sort on both linked list and arrays";
+                 "efficiency of insertion sort on both linked list and arrays" << std::endl;
     std::cout
-        << "* Would you like to try it out?\nPlease enter yes or no:\n-> ";
+        << "* Would you like to try it out?" << std::endl << "Please enter yes or no:" << std::endl << "-> ";
     return enter();
 }
 
@@ -113,16 +113,16 @@ void show_and_explain(int size, List* list, int array[], double ll_time,
                       double arr_time)
 {
 
-    std::cout << "~~~~~~~~~~~~~~~~~~~~Results~~~~~~~~~~~~~~~~~~~~" << std::endl;
+    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~Results~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
     std::cout << "Data size: " << size << std::endl;
     std::cout << "Time taken for Array: " << arr_time << " seconds"
               << std::endl;
     std::cout << "Time taken for Linked-List: " << ll_time << " seconds"
               << std::endl;
     std::cout << "The percent difference between each algorithm is "
-              << ((abs(ll_time - arr_time)) / ((ll_time + arr_time) / (2)))
+              << (((abs(ll_time - arr_time)) / ((ll_time + arr_time) / (2))) * (100))
               << std::endl;
-    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
 }
 
 void print50(const List* list)
@@ -137,8 +137,20 @@ void print50(const List* list)
         std::cout << trav->data << " ";
         if ((i + 1) % 10 == 0)
         {
-            std::cout << "\n";
+            std::cout << std::endl;
         }
         trav = trav->next;
     }
+}
+
+// prints list
+void print_list(const List* list)
+{
+    Node* trav = list->head;
+    while (trav != nullptr)
+    {
+        std::cout << trav->data << " ";
+        trav = trav->next;
+    }
+    std::cout << std::endl;
 }
