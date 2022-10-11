@@ -25,4 +25,7 @@ void show_and_explain(int size, List* list, int array[], double ll_time,
 
 // prints first and last 50 elements
 void print50(const List* list);
+
+// prints all items in the linked list
+void print_list(const List* list);
 #endif
