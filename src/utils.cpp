@@ -64,9 +64,9 @@ bool greet()
     std::cout << "Hello, Welcome to our program" << std::endl;
     std::cout << "********************************";
     std::cout << " Rundown ";
-    std::cout << "********************************";
+    std::cout << "********************************" << std::endl;
     std::cout << "* We have created a small program that compares the run time "
-                 "efficiency of insertion sort on both linked list and arrays";
+                 "efficiency of insertion sort on both linked list and arrays\n";
     std::cout
         << "* Would you like to try it out?\nPlease enter yes or no:\n-> ";
     return enter();
@@ -113,16 +113,16 @@ void show_and_explain(int size, List* list, int array[], double ll_time,
                       double arr_time)
 {
 
-    std::cout << "~~~~~~~~~~~~~~~~~~~~Results~~~~~~~~~~~~~~~~~~~~" << std::endl;
+    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~Results~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
     std::cout << "Data size: " << size << std::endl;
     std::cout << "Time taken for Array: " << arr_time << " seconds"
               << std::endl;
     std::cout << "Time taken for Linked-List: " << ll_time << " seconds"
               << std::endl;
     std::cout << "The percent difference between each algorithm is "
-              << ((abs(ll_time - arr_time)) / ((ll_time + arr_time) / (2)))
+              << (((abs(ll_time - arr_time)) / ((ll_time + arr_time) / (2))) * (100))
               << std::endl;
-    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
 }
 
 void print50(const List* list)
