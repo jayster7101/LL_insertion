@@ -66,9 +66,11 @@ bool greet()
     std::cout << " Rundown ";
     std::cout << "********************************" << std::endl;
     std::cout << "* We have created a small program that compares the run time "
-                 "efficiency of insertion sort on both linked list and arrays" << std::endl;
-    std::cout
-        << "* Would you like to try it out?" << std::endl << "Please enter yes or no:" << std::endl << "-> ";
+                 "efficiency of insertion sort on both linked list and arrays"
+              << std::endl;
+    std::cout << "* Would you like to try it out?" << std::endl
+              << "Please enter yes or no:" << std::endl
+              << "-> ";
     return enter();
 }
 
@@ -79,27 +81,17 @@ bool greet()
  * @param array
  * @return double time taken to sort data
  */
-double insertion_A(int size, int array[])
+double time_array_sort(int array[], int size)
 {
     using namespace std::chrono;
     high_resolution_clock::time_point t1 = high_resolution_clock::now();
-    for (int i = 1; i < size; i++)
-    {
-        int temp = array[i];
-        int j = i - 1;
-        while (j >= 0 && array[j] > temp)
-        {
-            array[j + 1] = array[j];
-            j = j - 1;
-        }
-        array[j + 1] = temp;
-    }
+    insertion_sort(array, size);
     high_resolution_clock::time_point t2 = high_resolution_clock::now();
     duration<double> time_span = duration_cast<duration<double>>(t2 - t1);
     return time_span.count();
 }
 
-double insertion_LL(List*& list)
+double time_insertion_sort(List*& list)
 {
     using namespace std::chrono;
     high_resolution_clock::time_point t1 = high_resolution_clock::now();
@@ -109,23 +101,25 @@ double insertion_LL(List*& list)
     return time_span.count();
 }
 
-void show_and_explain(int size, List* list, int array[], double ll_time,
-                      double arr_time)
+void show_and_explain(int size, double ll_time, double arr_time)
 {
 
-    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~Results~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~Results~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+              << std::endl;
     std::cout << "Data size: " << size << std::endl;
     std::cout << "Time taken for Array: " << arr_time << " seconds"
               << std::endl;
     std::cout << "Time taken for Linked-List: " << ll_time << " seconds"
               << std::endl;
     std::cout << "The percent difference between each algorithm is "
-              << (((abs(ll_time - arr_time)) / ((ll_time + arr_time) / (2))) * (100))
+              << (((abs(ll_time - arr_time)) / ((ll_time + arr_time) / (2))) *
+                  (100))
               << std::endl;
-    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+              << std::endl;
 }
 
-void print50(const List* list)
+void preview(const List* list)
 {
     Node* trav = list->head;
     for (int i = 0; i < 50; i++)

@@ -14,18 +14,18 @@ bool greet();
 bool enter();
 
 // sorts array using insertion sort algo and returns time taken to run
-double insertion_A(int size, int array[]);
+double time_array_sort(int array[], int size);
 
 // sorts array using insertion sort algo and returns time taken to run
-double insertion_LL(List*& list);
+double time_insertion_sort(List*& list);
 
 // Explains results of run
-void show_and_explain(int size, List* list, int array[], double ll_time,
-                      double arr_time);
+void show_and_explain(int size, double ll_time, double arr_time);
 
 // prints first and last 50 elements
-void print50(const List* list);
+void preview(const List* list);
 
 // prints all items in the linked list
 void print_list(const List* list);
+
 #endif

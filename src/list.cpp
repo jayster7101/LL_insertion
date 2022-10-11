@@ -60,3 +60,16 @@ void add_in_order(List* list, int data)
     new_node->next = trav->next;
     trav->next = new_node;
 }
+
+void list_free(List* list)
+{
+    Node* trav = list->head;
+    while (trav != nullptr)
+    {
+        Node* next = trav->next;
+        delete trav;
+        trav = next;
+    }
+
+    delete list;
+}

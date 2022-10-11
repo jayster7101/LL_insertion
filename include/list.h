@@ -18,4 +18,7 @@ void add_back(List* list, int data);
 // Add in order
 void add_in_order(List* list, int data);
 
+// Free list memory
+void list_free(List* list);
+
 #endif
