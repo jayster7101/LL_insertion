@@ -53,7 +53,7 @@ bool enter()
         }
         else
         {
-            std::cout << "Please enter yes or no only\n> ";
+            std::cout << "Please enter yes or no only" << std::endl << "-> ";
         }
     }
     return return_value;
@@ -66,9 +66,9 @@ bool greet()
     std::cout << " Rundown ";
     std::cout << "********************************" << std::endl;
     std::cout << "* We have created a small program that compares the run time "
-                 "efficiency of insertion sort on both linked list and arrays\n";
+                 "efficiency of insertion sort on both linked list and arrays" << std::endl;
     std::cout
-        << "* Would you like to try it out?\nPlease enter yes or no:\n-> ";
+        << "* Would you like to try it out?" << std::endl << "Please enter yes or no:" << std::endl << "-> ";
     return enter();
 }
 
@@ -137,8 +137,20 @@ void print50(const List* list)
         std::cout << trav->data << " ";
         if ((i + 1) % 10 == 0)
         {
-            std::cout << "\n";
+            std::cout << std::endl;
         }
         trav = trav->next;
     }
+}
+
+// prints list
+void print_list(const List* list)
+{
+    Node* trav = list->head;
+    while (trav != nullptr)
+    {
+        std::cout << trav->data << " ";
+        trav = trav->next;
+    }
+    std::cout << std::endl;
 }
